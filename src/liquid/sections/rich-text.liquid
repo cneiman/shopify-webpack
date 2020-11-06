@@ -1,0 +1,259 @@
+{% case section.settings.colors %}
+  {% when 'white' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--white">
+  {% when 'light' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--light">
+  {% when 'accent' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--accent">
+  {% when 'dark' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--dark">
+{% endcase %}
+
+  <div class="container">
+    <div class="row">
+
+      {% if section.settings.title != blank %}
+      <div class="col-md-12">
+        <div class="title-bar {{ settings.title-bar-styling }} custom-font">
+          <h2><span>{{ section.settings.title | escape }}</span></h2>
+          <div class="clear"></div>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="homepage-indiv-section-wrapper grid--full homepage-featured-content-wrapper">
+        {% case section.settings.width %}
+          {% when 'small' %}
+            <div class="col-md-6 col-md-offset-3 col-xs-12 homepage-featured-rich-text">
+          {% when 'medium' %}
+            <div class="col-md-8 col-md-offset-2 col-xs-12 homepage-featured-rich-text">
+          {% when 'large' %}
+            <div class="col-md-10 col-md-offset-1 col-xs-12 homepage-featured-rich-text">
+          {% when 'full-width' %}
+            <div class="col-md-12 col-xs-12 homepage-featured-rich-text">
+        {% endcase %}
+
+          {% if section.settings.text != blank %}
+            <div class="rte featured-row__subtext textarea">{{ section.settings.text }}</div>
+          {% endif %}
+
+          {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+            <div>
+              <a href="{{ section.settings.button_link }}" class="btn btn-custom">
+                {{ section.settings.button_label }}
+              </a>
+            </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "Rich text",
+        "de": "Rich Text",
+        "es": "Texto enriquecido",
+        "fr": "Texte riche",
+        "pt-PT": "Texto rico"
+    },
+    "class": "homepage-section--rich-text-wrapper wow fadeIn",
+    "settings": [
+        {
+            "type": "select",
+            "id": "colors",
+            "label": {
+                "en": "Color scheme",
+                "de": "Farbschema",
+                "es": "Esquema de colores",
+                "fr": "Palette de couleurs",
+                "pt-PT": "Esquema de cores"
+            },
+            "default": "white",
+            "options": [
+                {
+                    "value": "white",
+                    "label": {
+                        "en": "White",
+                        "de": "Wei\u00df",
+                        "es": "Blanco",
+                        "fr": "Blanc",
+                        "pt-PT": "Branco"
+                    }
+                },
+                {
+                    "value": "light",
+                    "label": {
+                        "en": "Light",
+                        "de": "Licht",
+                        "es": "Luz",
+                        "fr": "Clair",
+                        "pt-PT": "Claro"
+                    }
+                },
+                {
+                    "value": "accent",
+                    "label": {
+                        "en": "Feature",
+                        "de": "Eigenschaft",
+                        "es": "Destacado",
+                        "fr": "Caract\u00e9ristique",
+                        "pt-PT": "Funcionalidade"
+                    }
+                },
+                {
+                    "value": "dark",
+                    "label": {
+                        "en": "Dark",
+                        "de": "Dunkel",
+                        "es": "Oscuro",
+                        "fr": "Fonc\u00e9",
+                        "pt-PT": "Escuro"
+                    }
+                }
+            ],
+            "info": {
+                "en": "The colors in each 'scheme' can be changed in the 'General settings' > 'Colors' section of your admin",
+                "de": "Die Farben in jedem \u201eSchema\u201c k\u00f6nnen im Bereich \u201eAllgemeine Einstellungen\u201c > \u201eFarben\u201c Ihres Administrators ge\u00e4ndert werden ",
+                "es": "Los colores en cada \u00abesquema\u00bb pueden cambiarse en la secci\u00f3n \u00abAjustes generales\u00bb > \u00abColores\u00bb de tu administrador",
+                "fr": "Les couleurs de chaque \u00ab palette \u00bb peuvent \u00eatre chang\u00e9es dans la section \u00ab Param\u00e8tres g\u00e9n\u00e9raux \u00bb > \u00ab Couleurs \u00bb de votre administrateur",
+                "pt-PT": "As cores em cada \"esquema\" podem serl alteradas na sec\u00e7\u00e3o \"Defini\u00e7\u00f5es gerais\" > \"Cores\" do seu painel de administra\u00e7\u00e3o"
+            }
+        },
+        {
+            "type": "select",
+            "id": "width",
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": "medium",
+            "options": [
+                {
+                    "value": "small",
+                    "label": {
+                        "en": "Small",
+                        "de": "Klein",
+                        "es": "Peque\u00f1o",
+                        "fr": "Petite",
+                        "pt-PT": "Pequeno"
+                    }
+                },
+                {
+                    "value": "medium",
+                    "label": {
+                        "en": "Medium",
+                        "de": "Mittel",
+                        "es": "Mediano",
+                        "fr": "Moyenne",
+                        "pt-PT": "M\u00e9dio"
+                    }
+                },
+                {
+                    "value": "large",
+                    "label": {
+                        "en": "Large",
+                        "de": "Gro\u00df",
+                        "es": "Grande",
+                        "fr": "Grande",
+                        "pt-PT": "Grande"
+                    }
+                },
+                {
+                    "value": "full-width",
+                    "label": {
+                        "en": "Full width",
+                        "de": "Volle Breite",
+                        "es": "Ancho completo",
+                        "fr": "Pleine largeur",
+                        "pt-PT": "Largura total"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            },
+            "default": {
+                "en": "Welcome to our store",
+                "de": "Willkommen in unserem Store",
+                "es": "Bienvenido a nuestra tienda",
+                "fr": "Bienvenue dans notre magasin",
+                "pt-PT": "Bem-vindo/a \u00e0 nossa loja"
+            }
+        },
+        {
+            "type": "richtext",
+            "id": "text",
+            "label": {
+                "en": "Text",
+                "de": "Text",
+                "es": "Texto",
+                "fr": "Texte",
+                "pt-PT": "Texto"
+            },
+            "default": {
+                "en": "<p>Use this text block to show store announcements, advertise products and collections, or simply welcome visitors to your store.</p>",
+                "de": "<p>Verwenden Sie diesen Textblock, um Ank\u00fcndigungen zu zeigen, Produkte und Kollektionen zu bewerben oder einfach Besucher in Ihrem Store willkommen zu hei\u00dfen.</p>",
+                "es": "<p>Utilice este bloque de texto para mostrar avisos de la tienda, anunciar productos y colecciones o, simplemente, para dar la bienvenida a los visitantes. </p>",
+                "fr": "<p>Utilisez ce bloc de texte pour afficher les annonces en magasin, annoncer des produits et des collections ou simplement accueillir les visiteurs dans votre magasin. </p>",
+                "pt-PT": "<p>Utilize este bloco de texto para exibir an\u00fancios da loja, publicitar produtos e cole\u00e7\u00f5es, ou apenas dar as boas-vindas \u00e0s pessoas que visitam a sua loja.</p>"
+            }
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "label": {
+                "en": "Button label",
+                "de": "Button-Bezeichnung",
+                "es": "Etiqueta del bot\u00f3n",
+                "fr": "\u00c9tiquette du bouton",
+                "pt-PT": "Etiqueta do bot\u00e3o"
+            }
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": {
+                "en": "Button link",
+                "de": "Buttonlink",
+                "es": "Enlace del bot\u00f3n",
+                "fr": "Lien du bouton",
+                "pt-PT": "Liga\u00e7\u00e3o do bot\u00e3o"
+            }
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Rich text",
+                "de": "Rich Text",
+                "es": "Texto enriquecido",
+                "fr": "Texte riche",
+                "pt-PT": "Texto rico"
+            },
+            "category": {
+                "en": "Text",
+                "de": "Text",
+                "es": "Texto",
+                "fr": "Texte",
+                "pt-PT": "Texto"
+            }
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,525 @@
+{% case section.settings.colors %}
+  {% when 'white' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--white">
+  {% when 'light' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--light">
+  {% when 'accent' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--accent">
+  {% when 'dark' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--dark">
+{% endcase %}
+
+<div class="container">
+	<div class="row">
+		<div class="page-width col-md-12">
+    {% if section.settings.title != blank %}
+
+      <div class="title-bar {{ settings.title-bar-styling }} custom-font">
+      	<h2><span>{{ section.settings.title | escape }}</span></h2>
+      	<div class="clear"></div>
+      </div>
+
+    {% endif %}
+
+    {%- assign collection = collections[section.settings.collection] -%}
+
+    {% case section.settings.grid %}
+      {% when '2' %}
+        {%- assign grid_item_width = 'col-xs-6 col-sm-6 col-md-6 two_columns' -%}
+      {% when '3' %}
+        {%- assign grid_item_width = 'col-xs-6 col-sm-4 col-md-4 three_columns' -%}
+      {% when '4' %}
+        {%- assign grid_item_width = 'col-xs-6 col-sm-6 col-md-3 four_columns' -%}
+      {% when '5' %}
+        {%- assign grid_item_width = 'col-xs-6 col-sm-6 col-md-fifth five_columns' -%}
+      {% when '6' %}
+        {%- assign grid_item_width = 'col-xs-6 col-sm-4 col-md-2 six_columns' -%}
+    {% endcase %}
+
+    {%- assign product_limit = section.settings.grid | times: section.settings.rows -%}
+
+    <div class="row homepage-featured-products {% if section.settings.match-height %}products--match-height{% endif %}">
+
+      {% for product in collection.products limit: product_limit %}
+        <div class="grid__item {{ grid_item_width }} wow zoomIn collection-image-anim
+
+        {% case section.settings.grid %}
+          {% when '2' %}
+            {% cycle ' alpha mobile-clear tablet-clear', ' omega' %}
+          {% when '3' %}
+              {% cycle ' alpha mobile-clear', '', ' mobile-clear omega', 'alpha', ' mobile-clear', ' omega' %}
+          {% when '4' %}
+              {% cycle ' alpha mobile-clear tablet-clear', '', ' mobile-clear tablet-clear', ' omega' %}
+          {% when '5' %}
+            {% cycle ' alpha mobile-clear tablet-clear', '', ' mobile-clear tablet-clear', '', ' omega mobile-clear tablet-clear', ' alpha', ' mobile-clear tablet-clear', '', ' mobile-clear tablet-clear', ' omega' %}
+          {% when '6' %}
+              {% cycle ' alpha mobile-clear tablet-clear', '', ' mobile-clear', ' tablet-clear', ' mobile-clear', ' omega' %}
+        {% endcase %}
+
+		{% if section.settings.rows == 1 %} no-bottom-margin{% endif %}
+
+        ">
+
+        <div class="indiv-product">
+
+					{% case section.settings.hover-effect %}
+
+						{% when 'none' %}
+
+						<a class="grid__image" href="{{ product.url | within: collection }}" title="{{product.title}}">
+							{% include 'responsive-image' with product.featured_image, alt: product.title %}
+						</a>
+
+						{% when 'second-image' %}
+
+							{% if product.images.size > 1 %}
+
+								<div class="reveal">
+									<a class="grid__image" href="{{ product.url | within: collection }}" title="{{product.title}}">
+										{% include 'responsive-image' with product.featured_image, alt: product.title %}
+										<div class="hidden">
+											{% include 'responsive-image' with product.images[1], alt: product.images.last.alt %}
+										</div>
+									</a>
+								</div>
+
+							{% else %}
+
+								<a class="grid__image" href="{{ product.url | within: collection }}" title="{{product.title}}">
+									{% include 'responsive-image' with product.featured_image, alt: product.title %}
+								</a>
+
+							{% endif %}
+
+						{% when 'zoom' %}
+
+						<div class="collection-image--zoom-effect">
+							<div class="zoom-effect--inner">
+								<a class="grid__image" href="{{ product.url | within: collection }}" title="{{product.title}}">
+									{% include 'responsive-image' with product.featured_image, alt: product.title %}
+								</a>
+							</div>
+						</div>
+
+						{% endcase %}
+
+        	<div class="hp-title">
+
+        		{% if section.settings.show-vendor %}
+        			<div class="indiv-product-vendor-text">{{ product.vendor | link_to_vendor }}</div>
+        		{% endif %}
+
+        		<a href="{{ product.url | within: collection }}">
+
+        			<div class="indiv-product-title-text">{{ product.title }}</div>
+
+        			<span class="money-styling">
+        				{% if product.compare_at_price_max > product.price %}
+        					<span class="compare-at-price"><span class="money">{{ product.compare_at_price_max | money }}</span></span>
+        				{% endif %}
+
+                {% if product.price_varies %}
+                    <small>{{ 'products.general.from' | t }}</small> <span class="money">{{ product.price_min | money }}</span>
+                {% else %}
+                    <span class="money">{{ product.price_min | money }}</span>
+                {% endif %}
+        			</span>
+
+              {% if section.settings.show_reviews %}
+                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+              {% endif %}
+
+        		</a>
+        	</div>
+        </div>
+
+        {% if product.compare_at_price_max > product.price and product.available and settings.sale_badge %}
+        	<div class="sale-badge">{{ 'products.general.sale' | t }}</div>
+        {% endif %}
+        {% unless product.available %}
+            <div class="sold-out-badge">{{ 'products.product.sold_out' | t }}</div>
+        {% endunless %}
+
+        </div>
+
+      {% else %}
+
+        {% for i in (1..product_limit) %}
+          <div class="grid__item {{ grid_item_width }}
+
+          {% case section.settings.grid %}
+            {% when '2' %}
+              {% cycle 'alpha', 'omega' %}
+            {% when '3' %}
+              {% cycle ' alpha', '', ' omega' %}
+            {% when '4' %}
+              {% cycle ' alpha', '', '', ' omega' %}
+            {% when '5' %}
+              {% cycle ' alpha', '', '', '', ' omega' %}
+            {% when '6' %}
+               {% cycle ' alpha', '', '', '', '', ' omega' %}
+          {% endcase %}
+
+		  {% if section.settings.rows == 1 %} no-bottom-margin{% endif %}
+
+          ">
+
+            <div class="indiv-product">
+
+							{% case section.settings.hover-effect %}
+
+							{% when 'none' %}
+
+            	<a href="/admin/products" class="onboarding-link">
+					{% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+					{{ 'product-' | append: current | placeholder_svg_tag: 'icon icon--placeholder' }}
+            	</a>
+
+							{% when 'second-image' %}
+
+							<a href="/admin/products" class="onboarding-link">
+					{% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+					{{ 'product-' | append: current | placeholder_svg_tag: 'icon icon--placeholder' }}
+							</a>
+
+							{% when 'zoom' %}
+
+							<div class="collection-image--zoom-effect collection-image--zoom-effect-onboarding">
+								<div class="zoom-effect--inner">
+									<a href="/admin/products" class="onboarding-link">
+									{% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+									{{ 'product-' | append: current | placeholder_svg_tag: 'icon icon--placeholder' }}
+									</a>
+								</div>
+							</div>
+
+							{% endcase %}
+
+            	<div class="hp-title">
+            		<a href="/admin/products">
+            			<div class="indiv-product-title-text">{{ 'general.onboarding.product_title' | t }}</div>
+            			<span class="money money-styling">£19.99</span>
+            		</a>
+            	</div>
+            </div>
+
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.show_view_all %}
+      <div class="text-center">
+        <a href="{{ collection.url }}" class="btn btn-custom">
+          {{ 'collections.general.view_all' | t }}
+        </a>
+      </div>
+    {% endif %}
+	</div>
+  </div>
+</div>
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "Featured collection",
+        "de": "Vorgestellte Kollektion",
+        "es": "Colecci\u00f3n destacada",
+        "fr": "Collection en vedette",
+        "pt-PT": "Cole\u00e7\u00e3o em destaque"
+    },
+    "class": "homepage-section--featured-products-wrapper wow fadeIn",
+    "settings": [
+        {
+            "type": "select",
+            "id": "colors",
+            "label": {
+                "en": "Color scheme",
+                "de": "Farbschema",
+                "es": "Esquema de colores",
+                "fr": "Palette de couleurs",
+                "pt-PT": "Esquema de cores"
+            },
+            "default": "white",
+            "options": [
+                {
+                    "value": "white",
+                    "label": {
+                        "en": "White",
+                        "de": "Wei\u00df",
+                        "es": "Blanco",
+                        "fr": "Blanc",
+                        "pt-PT": "Branco"
+                    }
+                },
+                {
+                    "value": "light",
+                    "label": {
+                        "en": "Light",
+                        "de": "Licht",
+                        "es": "Luz",
+                        "fr": "Clair",
+                        "pt-PT": "Claro"
+                    }
+                },
+                {
+                    "value": "accent",
+                    "label": {
+                        "en": "Feature",
+                        "de": "Eigenschaft",
+                        "es": "Destacado",
+                        "fr": "Caract\u00e9ristique",
+                        "pt-PT": "Funcionalidade"
+                    }
+                },
+                {
+                    "value": "dark",
+                    "label": {
+                        "en": "Dark",
+                        "de": "Dunkel",
+                        "es": "Oscuro",
+                        "fr": "Fonc\u00e9",
+                        "pt-PT": "Escuro"
+                    }
+                }
+            ],
+            "info": {
+                "en": "The colors in each 'scheme' can be changed in the 'General settings' > 'Colors' section of your admin",
+                "de": "Die Farben in jedem \u201eSchema\u201c k\u00f6nnen im Bereich \u201eAllgemeine Einstellungen\u201c > \u201eFarben\u201c Ihres Administrators ge\u00e4ndert werden ",
+                "es": "Los colores en cada \u00abesquema\u00bb pueden cambiarse en la secci\u00f3n \u00abAjustes generales\u00bb > \u00abColores\u00bb de tu administrador",
+                "fr": "Les couleurs de chaque \u00ab palette \u00bb peuvent \u00eatre chang\u00e9es dans la section \u00ab Param\u00e8tres g\u00e9n\u00e9raux \u00bb > \u00ab Couleurs \u00bb de votre administrateur",
+                "pt-PT": "As cores em cada \"esquema\" podem serl alteradas na sec\u00e7\u00e3o \"Defini\u00e7\u00f5es gerais\" > \"Cores\" do seu painel de administra\u00e7\u00e3o"
+            }
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            },
+            "default": {
+                "en": "Featured products",
+                "de": "Vorgestellte Produkte",
+                "es": "Productos destacados",
+                "fr": "Produits en vedette",
+                "pt-PT": "Produtos em destaque"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "show-vendor",
+            "label": {
+                "en": "Show vendor",
+                "de": "Verk\u00e4ufer anzeigen",
+                "es": "Mostrar vendedor",
+                "fr": "Afficher le vendeur",
+                "pt-PT": "Mostrar vendedor"
+            },
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "hover-effect",
+            "label": {
+                "en": "Hover effect",
+                "de": "Hover-Effekt",
+                "es": "Efecto al pasar el cursor por encima",
+                "fr": "Effet de survol",
+                "pt-PT": "Efeito hover"
+            },
+            "default": "zoom",
+            "options": [
+                {
+                    "value": "none",
+                    "label": {
+                        "en": "None",
+                        "de": "Keiner",
+                        "es": "Ninguno",
+                        "fr": "Aucun",
+                        "pt-PT": "Nenhum"
+                    }
+                },
+                {
+                    "value": "zoom",
+                    "label": {
+                        "en": "Zoom",
+                        "de": "Zoom",
+                        "es": "Zoom",
+                        "fr": "Zoom",
+                        "pt-PT": "Aumentar"
+                    }
+                },
+                {
+                    "value": "second-image",
+                    "label": {
+                        "en": "Show Second Product Image",
+                        "de": "Zweites Produktbild anzeigen",
+                        "es": "Mostar la segunda imagen del producto",
+                        "fr": "Montrer la deuxi\u00e8me image du produit",
+                        "pt-PT": "Mostrar Imagem do Segundo Produto"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "collection",
+            "type": "collection",
+            "label": {
+                "en": "Collection",
+                "de": "Kollektion",
+                "es": "Colecci\u00f3n",
+                "fr": "Collection",
+                "pt-PT": "Cole\u00e7\u00e3o"
+            }
+        },
+        {
+            "type": "select",
+            "id": "grid",
+            "label": {
+                "en": "Products per row",
+                "de": "Produkte pro Zeile",
+                "es": "Productos por fila",
+                "fr": "Produits par ligne",
+                "pt-PT": "Produtos por linha"
+            },
+            "default": "4",
+            "options": [
+                {
+                    "value": "2",
+                    "label": "2"
+                },
+                {
+                    "value": "3",
+                    "label": "3"
+                },
+                {
+                    "value": "4",
+                    "label": "4"
+                },
+                {
+                    "value": "5",
+                    "label": "5"
+                },
+                {
+                    "value": "6",
+                    "label": "6"
+                }
+            ]
+        },
+        {
+            "type": "range",
+            "id": "rows",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": {
+                "en": "Rows",
+                "de": "Zeilen",
+                "es": "Filas",
+                "fr": "Lignes",
+                "pt-PT": "Linhas"
+            },
+            "default": 1
+        },
+        {
+            "type": "checkbox",
+            "id": "show_view_all",
+            "label": {
+                "en": "Show 'View all' button",
+                "de": "\u201eAlle ansehen\u201c-Button anzeigen",
+                "es": "Mostrar bot\u00f3n \u00abVer todos\u00bb",
+                "fr": "Afficher le bouton \u00ab Voir tout \u00bb",
+                "pt-PT": "Mostrar bot\u00e3o \"Ver tudo\""
+            },
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": {
+                "en": "Auto-height images",
+                "de": "Automatische Bildh\u00f6he",
+                "es": "Altura autom\u00e1tica de las im\u00e1genes",
+                "fr": "Modifier automatiquement la hauteur des images",
+                "pt-PT": "Configurar automaticamente a altura das imagens"
+            }
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "en": "Set all of your images to be the same height",
+                "de": "Stellen Sie alle Ihre Bilder auf dieselbe H\u00f6he ein",
+                "es": "Configura sus im\u00e1genes para que todas tengan la misma altura.",
+                "fr": "R\u00e9glez toutes vos images \u00e0 la m\u00eame hauteur",
+                "pt-PT": "Configure uma altura para todas as suas imagens"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "match-height",
+            "label": {
+                "en": "Enable auto-height",
+                "de": "Automatische H\u00f6he aktivieren",
+                "es": "Habilitar altura autom\u00e1tica",
+                "fr": "Activer la hauteur automatique",
+                "pt-PT": "Ativar configura\u00e7\u00e3o autom\u00e1tica de altura"
+            },
+            "default": false
+        },
+        {
+            "type": "header",
+            "content": {
+                "en": "Reviews",
+                "de": "Bewertungen",
+                "es": "Opiniones",
+                "fr": "Commentaires",
+                "pt-PT": "Opini\u00f5es"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "show_reviews",
+            "label": {
+                "en": "Enable",
+                "de": "Aktivieren",
+                "es": "Habilitar",
+                "fr": "Activer",
+                "pt-PT": "Ativar efeito de paralaxe"
+            },
+            "default": true
+        },
+        {
+            "type": "paragraph",
+            "content": {
+                "en": "You will need to install Shopify's [Product Reviews app](https://apps.shopify.com/product-reviews) before enabling this option.",
+                "de": "Sie m\u00fcssen Shopifys [Produktbewertungen-App](https://apps.shopify.com/product-reviews) installieren, um diese Option aktivieren zu k\u00f6nnen.",
+                "es": "Necesitar\u00e1 instalar la aplicaci\u00f3n de Shopify [Product Reviews app](https://apps.shopify.com/product-reviews) antes de habilitar esta opci\u00f3n.",
+                "fr": "Vous devrez installer Shopify's [application de commentaires de produits](https://apps.shopify.com/product-reviews) avant d'activer cette option.",
+                "pt-PT": "Ter\u00e1 de instalar a [aplica\u00e7\u00e3o de Avalia\u00e7\u00f5es de Produtos](https://apps.shopify.com/product-reviews) da Shopify antes de ativar esta op\u00e7\u00e3o."
+            }
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Featured collection",
+                "de": "Vorgestellte Kollektion",
+                "es": "Colecci\u00f3n destacada",
+                "fr": "Collection en vedette",
+                "pt-PT": "Cole\u00e7\u00e3o em destaque"
+            },
+            "category": {
+                "en": "Collection",
+                "de": "Kollektion",
+                "es": "Colecci\u00f3n",
+                "fr": "Collection",
+                "pt-PT": "Cole\u00e7\u00e3o"
+            }
+        }
+    ]
+}
+{% endschema %}

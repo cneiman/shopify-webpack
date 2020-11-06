@@ -1,0 +1,385 @@
+{% case section.settings.colors %}
+  {% when 'white' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--white">
+  {% when 'light' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--light">
+  {% when 'accent' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--accent">
+  {% when 'dark' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--dark">
+{% endcase %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			{% if section.settings.show-title %}
+				<div class="title-bar {{ settings.title-bar-styling }} custom-font{% if section.settings.instagram-homepage-width == 'full-width' %} instagram-wrapper--header-no-padding{% endif %}">
+					{% if settings.sm_instagram_link != empty %}
+					<a href="{{ settings.sm_instagram_link }}" target="_blank">
+					{% endif %}
+						<h2><span><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram icon</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
+              {{ section.settings.title | escape }}</span></h2>
+					{% if settings.sm_instagram_link != empty %}
+					</a>
+					{% endif %}
+					<div class="clear"></div>
+				</div>
+
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+
+{% if section.settings.instagram-homepage-width == 'full-width' %}
+	<div class="container-fluid homepage-slider-container">
+		<div class="row">
+			<div class="page-width col-md-12">
+{% else %}
+	<div class="container">
+		<div class="row">
+			<div class="page-width col-md-12">
+{% endif %}
+
+{% capture instagram_placeholder %}
+  <div class="instagram-indiv instagram-grid-{{ section.settings.grid }}">
+    <div>{{ 'image' | placeholder_svg_tag: 'icon icon--placeholder' }}</div>
+  </div>
+{% endcapture %}
+
+		{% if section.settings.instagram-access-token != empty %}
+
+			<input type="hidden" id="token-{{ section.id }}" value="{{ section.settings.instagram-access-token }}" />
+			<script type="text/html" id="instagram-placeholder">
+				{{ instagram_placeholder }}
+			</script>
+
+			<div class="instagram-wrapper" data-id="{{ section.id }}">
+
+				<div
+					id="instafeed-{{ section.id }}"
+					data-sort-by="{{ section.settings.sort-by | default:"recent" }}"
+					data-grid="{{ section.settings.grid }}"
+					data-rows="{{ section.settings.rows }}"
+					{% if section.settings.image-padding %}class="instagram--with-padding"{% endif %}>
+				</div>
+
+			</div>
+
+		{% else %}
+
+			{% capture total_images %}{{ section.settings.grid | times: section.settings.rows }}{% endcapture %}
+
+				<div class="instagram-wrapper" data-id="{{ section.id }}">
+
+					<div id="instafeed-{{ section.id }}" {% if section.settings.image-padding %}class="instagram--with-padding"{% endif %}>
+
+						{% for i in (1..total_images) %}
+							{{ instagram_placeholder }}
+						{% endfor %}
+
+					</div>
+
+				</div>
+
+		{% endif %}
+
+			{% if section.settings.show_instagram_button %}
+			  {% if settings.sm_instagram_link != empty %}
+			  	<div class="homepage-instagram-link-btn-wrapper">
+			  		<a href="{{ settings.sm_instagram_link }}" target="_blank" class="btn btn-custom homepage-instagram-link-btn">{{ 'general.homepage.instagram_follow_us' | t }}</a>
+			  	</div>
+			  {% endif %}
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+</div>
+
+{% assign instaimage = '{{image}}' %}
+{% assign instaurl = '{{link}}' %}
+
+{% schema %}
+{
+    "name": {
+        "en": "Instagram",
+        "de": "Instagram",
+        "es": "Instagram",
+        "fr": "Instagram",
+        "pt-PT": "Instagram"
+    },
+    "class": "homepage-section--instagram-wrapper wow fadeIn",
+    "settings": [
+        {
+            "type": "select",
+            "id": "colors",
+            "label": {
+                "en": "Color scheme",
+                "de": "Farbschema",
+                "es": "Esquema de colores",
+                "fr": "Palette de couleurs",
+                "pt-PT": "Esquema de cores"
+            },
+            "default": "white",
+            "options": [
+                {
+                    "value": "white",
+                    "label": {
+                        "en": "White",
+                        "de": "Wei\u00df",
+                        "es": "Blanco",
+                        "fr": "Blanc",
+                        "pt-PT": "Branco"
+                    }
+                },
+                {
+                    "value": "light",
+                    "label": {
+                        "en": "Light",
+                        "de": "Licht",
+                        "es": "Luz",
+                        "fr": "Clair",
+                        "pt-PT": "Claro"
+                    }
+                },
+                {
+                    "value": "accent",
+                    "label": {
+                        "en": "Feature",
+                        "de": "Eigenschaft",
+                        "es": "Destacado",
+                        "fr": "Caract\u00e9ristique",
+                        "pt-PT": "Funcionalidade"
+                    }
+                },
+                {
+                    "value": "dark",
+                    "label": {
+                        "en": "Dark",
+                        "de": "Dunkel",
+                        "es": "Oscuro",
+                        "fr": "Fonc\u00e9",
+                        "pt-PT": "Escuro"
+                    }
+                }
+            ],
+            "info": {
+                "en": "The colors in each 'scheme' can be changed in the 'General settings' > 'Colors' section of your admin",
+                "de": "Die Farben in jedem \u201eSchema\u201c k\u00f6nnen im Bereich \u201eAllgemeine Einstellungen\u201c > \u201eFarben\u201c Ihres Administrators ge\u00e4ndert werden ",
+                "es": "Los colores en cada \u00abesquema\u00bb pueden cambiarse en la secci\u00f3n \u00abAjustes generales\u00bb > \u00abColores\u00bb de tu administrador",
+                "fr": "Les couleurs de chaque \u00ab palette \u00bb peuvent \u00eatre chang\u00e9es dans la section \u00ab Param\u00e8tres g\u00e9n\u00e9raux \u00bb > \u00ab Couleurs \u00bb de votre administrateur",
+                "pt-PT": "As cores em cada \"esquema\" podem serl alteradas na sec\u00e7\u00e3o \"Defini\u00e7\u00f5es gerais\" > \"Cores\" do seu painel de administra\u00e7\u00e3o"
+            }
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            },
+            "default": {
+                "en": "Instagram",
+                "de": "Instagram",
+                "es": "Instagram",
+                "fr": "Instagram",
+                "pt-PT": "Instagram"
+            }
+        },
+        {
+            "type": "checkbox",
+            "id": "show-title",
+            "label": {
+                "en": "Show title",
+                "de": "Titel anzeigen",
+                "es": "Mostrar t\u00edtulo",
+                "fr": "Afficher le titre",
+                "pt-PT": "Mostrar t\u00edtulo"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "image-padding",
+            "label": {
+                "en": "Enable image padding",
+                "de": "Bildunterlage aktivieren",
+                "es": "Habilitar acolchado de im\u00e1genes",
+                "fr": "Activer le rembourrage de l'image",
+                "pt-PT": "Ativar padding de imagem"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "show_instagram_button",
+            "label": {
+                "en": "'Follow us' button",
+                "de": "\u201eFolgen Sie uns\u201c-Button",
+                "es": "Bot\u00f3n \u00abS\u00edganos\u00bb",
+                "fr": "Bouton \u00ab Suivez-nous \u00bb",
+                "pt-PT": "Bot\u00e3o \"Siga-nos\""
+            },
+            "info": {
+                "en": "Your Instagram profile URL must be set in General settings",
+                "de": "Ihre Instagram-Profil-URL muss in \u201eAllgemeine Einstellungen\u201c eingestellt sein",
+                "es": "La URL de su perfil de Instagram debe configurarse en los Ajustes generales",
+                "fr": "L'URL de votre profil Instagram doit \u00eatre d\u00e9finie dans \u00ab Param\u00e8tres g\u00e9n\u00e9raux \u00bb.",
+                "pt-PT": "O URL do seu perfil de Instagram deve ser configurado nas Defini\u00e7\u00f5es gerais"
+            }
+        },
+        {
+            "type": "text",
+            "id": "instagram-access-token",
+            "label": {
+                "en": "Access token",
+                "de": "Zugangstoken",
+                "es": "Token de acceso",
+                "fr": "Jeton d'acc\u00e8s",
+                "pt-PT": "Token de acesso"
+            }
+        },
+        {
+            "type": "radio",
+            "id": "instagram-homepage-width",
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "options": [
+                {
+                    "value": "fixed",
+                    "label": {
+                        "en": "Fixed",
+                        "de": "Festgestellt",
+                        "es": "Fijo",
+                        "fr": "Fixe",
+                        "pt-PT": "Fixo"
+                    }
+                },
+                {
+                    "value": "full-width",
+                    "label": {
+                        "en": "Full width",
+                        "de": "Volle Breite",
+                        "es": "Ancho completo",
+                        "fr": "Pleine largeur",
+                        "pt-PT": "Largura total"
+                    }
+                }
+            ],
+            "default": "fixed"
+        },
+        {
+            "type": "range",
+            "id": "grid",
+            "min": 4,
+            "max": 8,
+            "step": 2,
+            "label": {
+                "en": "Images per row",
+                "de": "Bilder pro Zeile",
+                "es": "Im\u00e1genes por fila",
+                "fr": "Images par ligne",
+                "pt-PT": "Imagens por linha"
+            },
+            "default": 6
+        },
+        {
+            "type": "range",
+            "id": "rows",
+            "min": 1,
+            "max": 5,
+            "step": 1,
+            "label": {
+                "en": "Rows",
+                "de": "Zeilen",
+                "es": "Filas",
+                "fr": "Lignes",
+                "pt-PT": "Linhas"
+            },
+            "default": 2
+        },
+        {
+            "type": "select",
+            "id": "sort-by",
+            "label": {
+                "en": "Sort by",
+                "de": "Sortieren nach",
+                "es": "Clasificar por",
+                "fr": "Trier par",
+                "pt-PT": "Ordenar por"
+            },
+            "default": "none",
+            "options": [
+                {
+                    "value": "none",
+                    "label": {
+                        "en": "Date added",
+                        "de": "Hinzugef\u00fcgt am",
+                        "es": "Fecha de inclusi\u00f3n",
+                        "fr": "Date ajout\u00e9e",
+                        "pt-PT": "Data de entrada"
+                    }
+                },
+                {
+                    "value": "most-liked",
+                    "label": {
+                        "en": "Most likes",
+                        "de": "Die meisten Likes",
+                        "es": "Mayor n\u00famero de Me gusta",
+                        "fr": "Ce que j'aime le plus",
+                        "pt-PT": "Com mais gostos"
+                    }
+                },
+                {
+                    "value": "most-commented",
+                    "label": {
+                        "en": "Most comments",
+                        "de": "Die meisten Kommentare",
+                        "es": "Mayor n\u00famero de comentarios",
+                        "fr": "La plupart des commentaires",
+                        "pt-PT": "Com mais coment\u00e1rios"
+                    }
+                },
+                {
+                    "value": "random",
+                    "label": {
+                        "en": "Random",
+                        "de": "Zuf\u00e4llig",
+                        "es": "Aleatorio",
+                        "fr": "Al\u00e9atoire",
+                        "pt-PT": "Aleat\u00f3rio"
+                    }
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Instagram",
+                "de": "Instagram",
+                "es": "Instagram",
+                "fr": "Instagram",
+                "pt-PT": "Instagram"
+            },
+            "category": {
+                "en": "Social media",
+                "de": "Social Media",
+                "es": "Redes sociales",
+                "fr": "M\u00e9dias sociaux",
+                "pt-PT": "Redes sociais"
+            }
+        }
+    ]
+}
+{% endschema %}

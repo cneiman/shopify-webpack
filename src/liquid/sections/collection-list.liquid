@@ -1,0 +1,254 @@
+{% case section.settings.colors %}
+  {% when 'white' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--white">
+  {% when 'light' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--light">
+  {% when 'accent' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--accent">
+  {% when 'dark' %}
+    <div class="homepage-sections-wrapper homepage-sections-wrapper--dark">
+{% endcase %}
+
+<div class="container">
+	<div class="row">
+		<div class="page-width col-md-12">
+    {% if section.settings.title != blank %}
+      <div class="title-bar {{ settings.title-bar-styling }} custom-font">
+      	<h2><span>{{ section.settings.title | escape }}</span></h2>
+      	<div class="clear"></div>
+      </div>
+    {% endif %}
+
+    {% case section.settings.grid %}
+      {% when 2 %}
+        {%- assign grid_item_width = 'col-md-6' -%}
+      {% when 3 %}
+        {%- assign grid_item_width = 'col-sm-4 col-md-4' -%}
+      {% when 4 %}
+        {%- assign grid_item_width = 'col-sm-6 col-md-3' -%}
+    {% endcase %}
+
+    <div class="collection-grid">
+      <div class="row">
+        {% for block in section.blocks limit: section.blocks.size %}
+          <div class="{{ grid_item_width }} indiv-collection-grid-homepage
+
+          {% case section.settings.grid %}
+            {% when 3 %}
+            	{% cycle ' alpha', '', ' omega' %}
+            {% when 4 %}
+            	{% cycle ' alpha', '', '', ' omega' %}
+          {% endcase %}
+
+          " {{ block.shopify_attributes }}>
+            {%- assign collection = collections[block.settings.collection] -%}
+
+
+					{%- assign image_size = '600x' -%}
+
+					<div class="homepage-collection-grid-inner">
+					  <div class="grid-image">
+					    <a href="{{ collection.url }}" class="grid-image--centered">
+					    {% if collection.empty? %}
+					          {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+					          {{ 'collection-' | append: current | placeholder_svg_tag: 'icon icon--placeholder' }}
+					    {% else %}
+					      {% if collection.image %}
+					        {% include 'responsive-image' with collection, alt: collection.image.alt %}
+					      {% else %}
+					        {% assign product = collection.products | first %}
+					        {% include 'responsive-image' with product, alt: product.featured_image.alt %}
+					      {% endif %}
+					    {% endif %}
+					    </a>
+					  </div>
+					</div>
+
+					<div class="hp-title homepage-collection-link">
+					{% if collection.empty? %}
+					  <a href="#" class="collection-item__title custom-font">{{ 'general.onboarding.collection_title' | t }}</a>
+					{% else %}
+					  <a href="{{ collection.url }}" class="collection-item__title custom-font">{{ collection.title }}</a>
+					{% endif %}
+					</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if section.blocks.size == 0 %}
+      <div class="placeholder-noblocks">
+		  {{ 'general.onboarding.no_content' | t }}
+		</div>
+    {% endif %}
+  </div>
+</div>
+</div>
+</div>
+
+{% schema %}
+{
+    "name": {
+        "en": "Collection list",
+        "de": "Kollektionsliste",
+        "es": "Lista de colecciones",
+        "fr": "Liste des collections",
+        "pt-PT": "Lista da cole\u00e7\u00e3o"
+    },
+    "class": "homepage-section--featured-collections-wrapper wow fadeIn",
+    "max_blocks": 12,
+    "settings": [
+        {
+            "type": "select",
+            "id": "colors",
+            "label": {
+                "en": "Color scheme",
+                "de": "Farbschema",
+                "es": "Esquema de colores",
+                "fr": "Palette de couleurs",
+                "pt-PT": "Esquema de cores"
+            },
+            "default": "white",
+            "options": [
+                {
+                    "value": "white",
+                    "label": {
+                        "en": "White",
+                        "de": "Wei\u00df",
+                        "es": "Blanco",
+                        "fr": "Blanc",
+                        "pt-PT": "Branco"
+                    }
+                },
+                {
+                    "value": "light",
+                    "label": {
+                        "en": "Light",
+                        "de": "Licht",
+                        "es": "Luz",
+                        "fr": "Clair",
+                        "pt-PT": "Claro"
+                    }
+                },
+                {
+                    "value": "accent",
+                    "label": {
+                        "en": "Feature",
+                        "de": "Eigenschaft",
+                        "es": "Destacado",
+                        "fr": "Caract\u00e9ristique",
+                        "pt-PT": "Funcionalidade"
+                    }
+                },
+                {
+                    "value": "dark",
+                    "label": {
+                        "en": "Dark",
+                        "de": "Dunkel",
+                        "es": "Oscuro",
+                        "fr": "Fonc\u00e9",
+                        "pt-PT": "Escuro"
+                    }
+                }
+            ],
+            "info": {
+                "en": "The colors in each 'scheme' can be changed in the 'General settings' > 'Colors' section of your admin",
+                "de": "Die Farben in jedem \u201eSchema\u201c k\u00f6nnen im Bereich \u201eAllgemeine Einstellungen\u201c > \u201eFarben\u201c Ihres Administrators ge\u00e4ndert werden ",
+                "es": "Los colores en cada \u00abesquema\u00bb pueden cambiarse en la secci\u00f3n \u00abAjustes generales\u00bb > \u00abColores\u00bb de tu administrador",
+                "fr": "Les couleurs de chaque \u00ab palette \u00bb peuvent \u00eatre chang\u00e9es dans la section \u00ab Param\u00e8tres g\u00e9n\u00e9raux \u00bb > \u00ab Couleurs \u00bb de votre administrateur",
+                "pt-PT": "As cores em cada \"esquema\" podem serl alteradas na sec\u00e7\u00e3o \"Defini\u00e7\u00f5es gerais\" > \"Cores\" do seu painel de administra\u00e7\u00e3o"
+            }
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            },
+            "default": {
+                "en": "Featured collections",
+                "de": "Vorgestellte Kollektionen",
+                "es": "Colecciones destacadas",
+                "fr": "Collections en vedette",
+                "pt-PT": "Cole\u00e7\u00f5es em destaque"
+            }
+        },
+        {
+            "type": "range",
+            "id": "grid",
+            "min": 2,
+            "max": 4,
+            "step": 1,
+            "label": {
+                "en": "Collections per row",
+                "de": "Kollektionen pro Zeile",
+                "es": "Colecciones por filas",
+                "fr": "Collections par rang\u00e9e",
+                "pt-PT": "Cole\u00e7\u00f5es por linha"
+            },
+            "default": 3
+        }
+    ],
+    "blocks": [
+        {
+            "type": "featured_collection",
+            "name": {
+                "en": "Collection",
+                "de": "Kollektion",
+                "es": "Colecci\u00f3n",
+                "fr": "Collection",
+                "pt-PT": "Cole\u00e7\u00e3o"
+            },
+            "settings": [
+                {
+                    "label": {
+                        "en": "Collection",
+                        "de": "Kollektion",
+                        "es": "Colecci\u00f3n",
+                        "fr": "Collection",
+                        "pt-PT": "Cole\u00e7\u00e3o"
+                    },
+                    "id": "collection",
+                    "type": "collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Collection list",
+                "de": "Kollektionsliste",
+                "es": "Lista de colecciones",
+                "fr": "Liste des collections",
+                "pt-PT": "Lista da cole\u00e7\u00e3o"
+            },
+            "category": {
+                "en": "Collection",
+                "de": "Kollektion",
+                "es": "Colecci\u00f3n",
+                "fr": "Collection",
+                "pt-PT": "Cole\u00e7\u00e3o"
+            },
+            "settings": {
+                "grid": 3
+            },
+            "blocks": [
+                {
+                    "type": "featured_collection"
+                },
+                {
+                    "type": "featured_collection"
+                },
+                {
+                    "type": "featured_collection"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}

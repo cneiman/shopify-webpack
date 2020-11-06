@@ -1,0 +1,117 @@
+{%- if section.settings.show_product_recommendations %}
+    <div class="product-recommendations" data-product-id="{{ product.id }}" data-limit="4">
+
+        {%- if recommendations.products_count > 0 -%}
+            {% unless section.settings.product_recommendations_heading == blank %}
+                <div class="title-bar {{ settings.title-bar-styling }} custom-font">
+                <h2>{{ section.settings.product_recommendations_heading }}</h2>
+                <div class="clear"></div>
+                </div>
+            {% endunless %}
+            <div class="row" data-section-id="{{ section.id }}">
+                {%- for product in recommendations.products -%}
+                    {% assign sold_out = true %}
+                    {% if product.available %}
+                        {% assign sold_out = false %}
+                    {% endif %}
+                    <div class="grid__item collection-image-anim wow zoomIn col-md-3 col-xs-6 indiv-product-wrapper{% cycle ' alpha mobile-clear tablet-clear', '', ' mobile-clear tablet-clear', ' omega' %}">
+
+                        <div class="indiv-product">
+
+                            <a href="{{ product.url | within: collection }}" title="{{product.title}}">
+                                {% include 'responsive-image' with product.featured_image, alt: image.alt, props: '' %}
+                            </a>
+
+                            <div class="hp-title">
+
+                                {% comment %}
+                                Excluded for now
+                                {% if section.settings.show-vendor %}
+                                    <div class="indiv-product-vendor-text">{{ product.vendor | link_to_vendor }}</div>
+                                {% endif %}
+                                {% endcomment %}
+
+                                <a href="{{ product.url | within: collection }}">
+                                    <div class="indiv-product-title-text">{{ product.title }}</div>
+                                    <span class="money-styling">
+
+                                        {% if product.compare_at_price_max > product.price %}
+                                            <h5 class="custom-font compare-at-price">
+                                                <span class="money">{{ product.compare_at_price_max | money }}</span>
+                                            </h5>
+                                        {% endif %}
+
+                                        {% if product.price_varies %}
+                                            <small>{{ 'products.general.from' | t }}</small> <span class="money">{{ product.price_min | money }}</span>
+                                        {% else %}
+                                            <span class="money">{{ product.price_min | money }}</span>
+                                        {% endif %}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {% if product.compare_at_price_max > product.price and product.available and settings.sale_badge %}
+                            <div class="sale-badge">{{ 'products.general.sale' | t }}</div>
+                        {% endif %}
+
+                        {% unless product.available %}
+                            <div class="sold-out-badge">{{ 'products.product.sold_out' | t }}</div>
+                        {% endunless %}
+                    </div>
+                {%- endfor -%}
+            </ul>
+        {%- endif -%}
+    </div>
+{%- endif -%}
+
+{% schema %}
+{
+    "name": {
+        "en": "Product recommendations",
+        "de": "Produktempfehlungen",
+        "es": "Recomendaciones de productos",
+        "fr": "Recommandations de produits",
+        "pt-PT": "Recomenda\u00e7\u00f5es de produtos"
+    },
+    "settings": [
+        {
+            "type": "checkbox",
+            "id": "show_product_recommendations",
+            "label": {
+                "en": "Show dynamic recommendations",
+                "de": "Dynamische Empfehlungen anzeigen",
+                "es": "Mostrar recomendaciones din\u00e1micas",
+                "fr": "Montrer des recommandations dynamiques",
+                "pt-PT": "Mostrar recomenda\u00e7\u00f5es din\u00e2micas"
+            },
+            "info": {
+                "en": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+                "de": "Dynamische Empfehlungen ver\u00e4ndern und verbessern sich mit der Zeit. [Mehr erfahren](https://help.shopify.com/en/themes/development/recommended-products)",
+                "es": "Las recomendaciones din\u00e1micas cambian y mejoran con el tiempo. [Aprenda m\u00e1s](https://help.shopify.com/en/themes/development/recommended-products)",
+                "fr": "Les recommandations dynamiques changent et s'am\u00e9liorent avec le temps. [En savoir plus](https://help.shopify.com/en/themes/development/recommended-products)",
+                "pt-PT": "As recomenda\u00e7\u00f5es din\u00e2micas mudam e melhoram com o tempo. [Saber mais](https://help.shopify.com/en/themes/development/recommended-products)"
+            },
+            "default": true
+        },
+        {
+            "type": "text",
+            "id": "product_recommendations_heading",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            },
+            "default": {
+                "en": "You may also like",
+                "de": "Ihnen k\u00f6nnte auch gefallen",
+                "es": "Tambi\u00e9n podr\u00eda gustarle",
+                "fr": "Vous aimerez peut-\u00eatre aussi",
+                "pt-PT": "Tamb\u00e9m poder\u00e1 gostar de"
+            }
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,1835 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "zero",
+    "theme_author": "zero",
+    "theme_version": "0",
+    "theme_documentation_url": "https://kokyusuru.com",
+    "theme_support_url": "https://kokyusuru.com"
+  },
+  {
+    "name": {
+      "en": "Colors",
+      "fr": "Couleurs",
+      "de": "Farben",
+      "es": "Colores",
+      "pt-PT": "Cores"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        }
+      },
+      {
+        "type": "color",
+        "id": "font-colour",
+        "label": {
+          "en": "Body text",
+          "fr": "Corps du texte",
+          "de": "Body-Text",
+          "es": "Texto del cuerpo",
+          "pt-PT": "Corpo de texto"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "link-colour",
+        "label": {
+          "en": "Link",
+          "fr": "Lien",
+          "de": "Link",
+          "es": "Enlace",
+          "pt-PT": "Ligação"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "active-link-colour",
+        "label": {
+          "en": "Active link",
+          "fr": "Lien actif",
+          "de": "Aktiver Link",
+          "es": "Enlace activo",
+          "pt-PT": "Ligação ativa"
+        },
+        "default": "#333333"
+      },
+      {
+        "type": "color",
+        "id": "sold-out-badge-color",
+        "label": {
+          "en": "Sold out badge",
+          "fr": "Badge « Épuisé »",
+          "de": "Ausverkauft-Button",
+          "es": "Cartel de «agotado»",
+          "pt-PT": "Emblema de esgotado"
+        },
+        "default": "#000000"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Header",
+          "fr": "En-tête",
+          "de": "Header",
+          "es": "Encabezado",
+          "pt-PT": "Cabeçalho"
+        }
+      },
+      {
+        "type": "color",
+        "id": "header-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ebebeb"
+      },
+      {
+        "type": "color",
+        "id": "header-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#ebebeb"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Sticky header",
+          "fr": "En-tête fixe",
+          "de": "Sticky Header",
+          "es": "Encabezado adhesivo",
+          "pt-PT": "Cabeçalho adesivo"
+        }
+      },
+      {
+        "type": "color",
+        "id": "sticky-header-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "sticky-header-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "sticky-header-border-colour",
+        "label": {
+          "en": "Border",
+          "fr": "Bordure",
+          "de": "Rand",
+          "es": "Borde",
+          "pt-PT": "Limite"
+        },
+        "default": "#c6c6c6"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Footer",
+          "fr": "Pied de page",
+          "de": "Footer",
+          "es": "Pie de página",
+          "pt-PT": "Rodapé"
+        }
+      },
+      {
+        "type": "color",
+        "id": "footer-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ebebeb"
+      },
+      {
+        "type": "color",
+        "id": "footer-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#ebebeb"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Main menu",
+          "fr": "Menu principal",
+          "de": "Hauptmenü",
+          "es": "Menú principal",
+          "pt-PT": "Menu principal"
+        }
+      },
+      {
+        "type": "color",
+        "id": "main-menu-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "main-menu-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#464646"
+      },
+      {
+        "type": "color",
+        "id": "main-menu-border-colour",
+        "label":  {
+          "en": "Border",
+          "fr": "Bordure",
+          "de": "Rand",
+          "es": "Borde",
+          "pt-PT": "Limite"
+        },
+        "default": "#d1d1d1"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Page background",
+          "fr": "Fond de page",
+          "de": "Seitenhintergrund",
+          "es": "Fondo de pantalla",
+          "pt-PT": "Fundo da página"
+        }
+      },
+      {
+        "type": "color",
+        "id": "bg_colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "indiv_product_shadowing",
+        "label":  {
+          "en": "Show box shadows on product images",
+          "fr": "Faire apparaître l’ombre des boîtes sur les images de produits",
+          "de": "Zeige Box-Schatten auf Produktbildern",
+          "es": "Mostrar «box-shadow» en las imágenes de productos",
+          "pt-PT": "Exibir sombras de caixa em imagens de produtos"
+        },
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Site title",
+          "fr": "Titre du site",
+          "de": "Seitentitel",
+          "es": "Título del sitio",
+          "pt-PT": "Título do site"
+        }
+      },
+      {
+        "type": "color",
+        "id": "logo_colour",
+        "label":  {
+          "en": "Logo link",
+          "fr": "Lien vers logo",
+          "de": "Logo-Link",
+          "es": "Logo de enlace",
+          "pt-PT": "Ligação do logótipo"
+        },
+        "default": "#282C2E"
+      },
+      {
+        "type": "color",
+        "id": "logo_hover_colour",
+        "label":  {
+          "en": "Logo link hover",
+          "fr": "Lien flottant vers logo",
+          "de": "Logo-Link-Hover",
+          "es": "Logo de enlace con función «hover»",
+          "pt-PT": "Passar o cursor sobre a ligação do logótipo"
+        },
+        "default": "#554B60"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Buttons",
+          "fr": "Boutons",
+          "de": "Buttons",
+          "es": "Botones",
+          "pt-PT": "Botões"
+        }
+      },
+      {
+        "type": "color",
+        "id": "add-to-cart-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#39863a"
+      },
+      {
+        "type": "color",
+        "id": "add-to-cart-background-hover-colour",
+        "label":  {
+          "en": "Background hover",
+          "fr": "Fond flottant",
+          "de": "Hintergrund-Hover",
+          "es": "Fondo con función «hover»",
+          "pt-PT": "Passar o cursor sobre o fundo"
+        },
+        "default": "#c8d2c9"
+      },
+      {
+        "type": "color",
+        "id": "add-to-cart-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Popup",
+          "fr": "Pop-up",
+          "de": "Popup",
+          "es": "Emergente",
+          "pt-PT": "Popup"
+        }
+      },
+      {
+        "type": "color",
+        "id": "pop-up-text-background-colour",
+        "label": {
+          "en": "Background",
+          "fr": "Fond",
+          "de": "Hintergrund",
+          "es": "Fondo",
+          "pt-PT": "Fundo"
+        },
+        "default": "#ebebeb"
+      },
+      {
+        "type": "color",
+        "id": "pop-up-text-header-text-colour",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Color schemes",
+          "fr": "Palettes de couleurs",
+          "de": "Farbschemata",
+          "es": "Esquemas de color",
+          "pt-PT": "Esquemas de cor"
+        },
+        "info": {
+          "en": "Set color schemes for options 'Light', 'Featured' and 'Dark' here. ",
+          "fr": "Définir ici les palettes de couleurs pour les options « Clair », « Présentation » et « Sombre »",
+          "de": "Farbschemata für Optionen 'Hell', 'Featured' und 'Dunkel' hier einsetzen.",
+          "es": "Establezca los esquemas de color para las opciones «claro», «destacado» y «oscuro» aquí.",
+          "pt-PT": "Definir esquemas de cor para as opções 'Claro', 'Destacado' e 'Escuro' aqui,"
+        }
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeLightBackground",
+        "label":  {
+          "en": "Light background",
+          "fr": "Fond clair",
+          "de": "Heller Hintergrund",
+          "es": "Fondo claro",
+          "pt-PT": "Fundo claro"
+        },
+        "default": "#F3F3F3"
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeLightText",
+        "label":  {
+          "en": "Light text",
+          "fr": "Texte clair",
+          "de": "Heller Text",
+          "es": "Texto claro",
+          "pt-PT": "Texto claro"
+        },
+        "default": "#414141"
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeFeatureBackground",
+        "label":  {
+          "en": "Feature background",
+          "fr": "Fond de présentation",
+          "de": "Feature-Hintergrund",
+          "es": "Fondo descatado",
+          "pt-PT": "Fundo característico"
+        },
+        "default": "#EDFFFF"
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeFeatureText",
+        "label":  {
+          "en": "Feature text",
+          "fr": "Texte de présentation",
+          "de": "Feature-Text",
+          "es": "Texto descatado",
+          "pt-PT": "Texto característico"
+        },
+        "default": "#1565D6"
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeDarkBackground",
+        "label":  {
+          "en": "Dark background",
+          "fr": "Fond sombre",
+          "de": "Dunkler Hintergrund",
+          "es": "Fondo oscuro",
+          "pt-PT": "Fundo escuro  "
+        },
+        "default": "#242424"
+      },
+      {
+        "type": "color",
+        "id": "colorSchemeDarkText",
+        "label":  {
+          "en": "Dark text",
+          "fr": "Texte sombre",
+          "de": "Dunkler Text",
+          "es": "Texto oscuro",
+          "pt-PT": "Texto escuros"
+        },
+        "default": "#ffffff"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Image overlays",
+          "fr": "Recouvrements d’images ",
+          "de": "Bild-Overlay",
+          "es": "Superposiciones de imagen",
+          "pt-PT": "Sobreposições de imagem"
+        }
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay_text",
+        "label": {
+          "en": "Text",
+          "fr": "Texte",
+          "de": "Text",
+          "es": "Texto",
+          "pt-PT": "Texto"
+        },
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "color_image_overlay",
+        "label": {
+          "en": "Fade",
+          "fr": "Fondu",
+          "de": "Verblassen",
+          "es": "Fundido",
+          "pt-PT": "Desvanecer"
+        },
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "image_overlay_opacity",
+        "min": 0,
+        "max": 95,
+        "step": 5,
+        "unit": {
+          "en": "%",
+          "fr": "%",
+          "de": "%",
+          "es": "%",
+          "pt-PT": "%"
+        },
+        "label": {
+          "en": "Overlay opacity",
+          "fr": "Opacité du recouvrement",
+          "de": "Overlay-Deckkraft",
+          "es": "Opacidad de superposición",
+          "pt-PT": "Opacidade de sobreposição"
+        },
+        "default": 60
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Sale badge",
+          "fr": "Badge « En solde »",
+          "de": "Sale-Button",
+          "es": "Cartel de «oferta»",
+          "pt-PT": "Emblema de venda"
+        }
+      },
+      {
+        "type": "color",
+        "id": "sale-label-colour",
+        "label": {
+          "en": "Sale badge",
+          "fr": "Badge « En solde »",
+          "de": "Sale-Button",
+          "es": "Cartel de «oferta»",
+          "pt-PT": "Emblema de venda"
+        },
+        "default": "#f26c4f"
+      },
+      {
+         "type": "checkbox",
+         "id": "sale_badge",
+         "label": {
+           "en": "Enable sale badge",
+           "fr": "Activer le badge « En solde »",
+           "de": "Sale-Button aktivieren",
+           "es": "Activar cartel de «oferta»",
+           "pt-PT": "Ativar emblema de venda"
+         },
+         "default": true
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Typography",
+      "fr": "Typographie",
+      "de": "Typographie",
+      "es": "Tipografía",
+      "pt-PT": "Tipografia"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Headings",
+          "fr": "Titres",
+          "de": "Headings",
+          "es": "Encabezados",
+          "pt-PT": "Cabeçalhos"
+        }
+      },
+        {
+          "type": "font_picker",
+        "id": "type_header_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police",
+          "de": "Schriftart",
+          "es": "Tipografía",
+          "pt-PT": "Tipo de letra"
+        },
+        "default": "montserrat_n5"
+      },
+      {
+        "type": "select",
+        "id": "title-bar-styling",
+        "label": {
+          "en": "Section title style",
+          "fr": "Style de titre de section",
+          "de": "Stil des Abschnitttitels",
+          "es": "Diseño del título de sección",
+          "pt-PT": "Estilo do títlo da secção"
+        },
+        "options": [
+          {
+            "value": "title-bar-minimal",
+            "label": {
+              "en": "Minimal",
+              "fr": "Minimal",
+              "de": "Minimal",
+              "es": "Mínimo",
+              "pt-PT": "Mínimo"
+            }
+          },
+          {
+            "value": "title-bar-lowercase",
+            "label": {
+              "en": "Full width, line behind",
+              "fr": "Trait faisant toute la largeur en arrière-plan",
+              "de": "Linie in voller Breite dahinter",
+              "es": "Línea de ancho completo detrás",
+              "pt-PT": "Linha de largura máxima atrás"
+            }
+          },
+          {
+            "value": "title-bar-underline",
+            "label": {
+              "en": "Underline",
+              "fr": "Souligner",
+              "de": "Unterstrichen",
+              "es": "Subrayar",
+              "pt-PT": "Sublinhar"
+            }
+          },
+          {
+            "value": "title-bar-diagonal-background",
+            "label":  {
+              "en": "Diagonal background",
+              "fr": "Fond en motifs diagonaux",
+              "de": "Diagonaler Hintergrund",
+              "es": "Fondo diagonal",
+              "pt-PT": "Fundo diagonal"
+            }
+          }
+        ],
+        "default": "title-bar-underline"
+      },
+      {
+        "type": "select",
+        "id": "heading-case",
+        "label": {
+          "en": "Heading case",
+          "fr": "Casse de titre",
+          "de": "Titelgröße",
+          "es": "Formato del encabezado",
+          "pt-PT": "Caixa do cabeçalho"
+        },
+        "options": [
+          {
+            "value": "capitalize",
+            "label": {
+              "en": "Normal case",
+              "fr": "Casse normale",
+              "de": "Normale Größe",
+              "es": "Formato normal",
+              "pt-PT": "Caixa normal"
+            }
+          },
+          {
+            "value": "lowercase",
+            "label": {
+              "en": "Lowercase",
+              "fr": "Minuscules",
+              "de": "Kleinschrift",
+              "es": "Minúscula",
+              "pt-PT": "Letra minúscula"
+            }
+          },
+          {
+            "value": "uppercase",
+            "label": {
+              "en": "Uppercase",
+              "fr": "Majuscules",
+              "de": "Großschrift",
+              "es": "Mayúscula",
+              "pt-PT": "Letra maiúscula"
+            }
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "typography-headings-font-size",
+        "min": 12,
+        "max": 26,
+        "step": 2,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Base size",
+          "fr": "Taille de base",
+          "de": "Basisgröße",
+          "es": "Tamaño base",
+          "pt-PT": "Tamanho base"
+        },
+        "default": 16
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Body text",
+          "fr": "Corps de texte",
+          "de": "Textkörper",
+          "es": "Texto principal",
+          "pt-PT": "Corpo de texto"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_base_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police",
+          "de": "Schriftart",
+          "es": "Tipografía",
+          "pt-PT": "Tipo de letra"
+        },
+        "default": "work_sans_n4"
+      },
+      {
+        "type": "range",
+        "id": "typography-body-font-size",
+        "min": 12,
+        "max": 22,
+        "step": 1,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Base size",
+          "fr": "Taille de base",
+          "de": "Basisgröße",
+          "es": "Tamaño base",
+          "pt-PT": "Tamanho base"
+        },
+        "default": 14
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Announcement bar",
+          "fr": "Barre de notification",
+          "de": "Ankündigungsleiste",
+          "es": "Barra de anuncios",
+          "pt-PT": "Barra de anúncios"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_announcement_bar_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police",
+          "de": "Schriftart",
+          "es": "Tipografía",
+          "pt-PT": "Tipo de letra"
+        },
+        "default": "work_sans_n4"
+      },
+      {
+        "type": "range",
+        "id": "typography-announcement-bar-font-size",
+        "min": 10,
+        "max": 18,
+        "step": 1,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Base size",
+          "fr": "Taille de base",
+          "de": "Basisgröße",
+          "es": "Tamaño base",
+          "pt-PT": "Tamanho base"
+        },
+        "default": 14
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Navigation",
+          "fr": "Navigation",
+          "de": "Navigation",
+          "es": "Navegación",
+          "pt-PT": "Navegação"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_navigation_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police",
+          "de": "Schriftart",
+          "es": "Tipografía",
+          "pt-PT": "Tipo de letra"
+        },
+        "default": "roboto_n4"
+      },
+      {
+        "type": "range",
+        "id": "typography-menu-font-size",
+        "min": 12,
+        "max": 16,
+        "step": 1,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Base size",
+          "fr": "Taille de base",
+          "de": "Basisgröße",
+          "es": "Tamaño base",
+          "pt-PT": "Tamanho base"
+        },
+        "default": 14
+      },
+      {
+        "type": "select",
+        "id": "menu-case",
+        "label": {
+          "en": "Menu case",
+          "fr": "Casse de menu",
+          "de": "Menügröße",
+          "es": "Formato del menú",
+          "pt-PT": "Caixa do menu"
+        },
+        "options": [
+          {
+            "value": "menu-normal-case",
+            "label": {
+              "en": "Normal case",
+              "fr": "Casse normale",
+              "de": "Normale Größe",
+              "es": "Formato normal",
+              "pt-PT": "Caixa normal"
+            }
+          },
+          {
+            "value": "menu-lower-case",
+            "label": {
+              "en": "Lowercase",
+              "fr": "Minuscules",
+              "de": "Kleinschrift",
+              "es": "Minúscula",
+              "pt-PT": "Letra minúscula"
+            }
+          },
+          {
+            "value": "menu-upper-case",
+            "label": {
+              "en": "Uppercase",
+              "fr": "Majuscules",
+              "de": "Großschrift",
+              "es": "Mayúscula",
+              "pt-PT": "Letra maiúscula"
+            }
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Product page titles",
+          "fr": "Titres de pages de produits",
+          "de": "Titel der Produktseiten",
+          "es": "Títulos de las páginas de productos",
+          "pt-PT": "Títulos de páginas de produtos"
+        }
+      },
+      {
+        "type": "range",
+        "id": "product-page-font-size",
+        "min": 14,
+        "max": 60,
+        "step": 1,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Size",
+          "fr": "Taille",
+          "de": "Größe",
+          "es": "Tamaño",
+          "pt-PT": "Tamanho"
+        },
+        "default": 24
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Add to cart' buttons",
+          "fr": "Boutons « Ajouter au panier »",
+          "de": "'Zum Einkaufswagen hinzufügen'-Button",
+          "es": "Botones de «Añadir al carrito»",
+          "pt-PT": "Botões 'Adicionar a carrinho'"
+        }
+      },
+      {
+        "type": "range",
+        "id": "add-to-cart-font-size",
+        "min": 14,
+        "max": 20,
+        "step": 1,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Size",
+          "fr": "Taille",
+          "de": "Größe",
+          "es": "Tamaño",
+          "pt-PT": "Tamanho"
+        },
+        "default": 16
+      },
+      {
+        "type": "select",
+        "id": "add-to-cart-text-transform",
+        "label": {
+          "en": "Button case",
+          "fr": "Casse de bouton",
+          "de": "Button-Größe",
+          "es": "Formato del botón",
+          "pt-PT": "Caixa do botão"
+        },
+        "options": [
+          {
+            "value": "none",
+            "label": {
+              "en": "Normal case",
+              "fr": "Casse normale",
+              "de": "Normale Größe",
+              "es": "Formato normal",
+              "pt-PT": "Caixa normal"
+            }
+          },
+          {
+            "value": "lowercase",
+            "label": {
+              "en": "Lowercase",
+              "fr": "Minuscules",
+              "de": "Kleinschrift",
+              "es": "Minúscula",
+              "pt-PT": "Letra minúscula"
+            }
+          },
+          {
+            "value": "uppercase",
+            "label": {
+              "en": "Uppercase",
+              "fr": "Majuscules",
+              "de": "Großschrift",
+              "es": "Mayúscula",
+              "pt-PT": "Letra maiúscula"
+            }
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Site title",
+          "fr": "Titre du site",
+          "de": "Seitentitel",
+          "es": "Título del sitio",
+          "pt-PT": "Título do site"
+        }
+      },
+      {
+        "type": "range",
+        "id": "header_font_size",
+        "min": 10,
+        "max": 72,
+        "step": 2,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Size",
+          "fr": "Taille",
+          "de": "Größe",
+          "es": "Tamaño",
+          "pt-PT": "Tamanho"
+        },
+        "default": 24
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Popup",
+          "fr": "Pop-up",
+          "de": "Popup",
+          "es": "Emergente",
+          "pt-PT": "Popup"
+        }
+      },
+      {
+        "type": "range",
+        "id": "pop-up-text-header-text-size",
+        "min": 10,
+        "max": 72,
+        "step": 2,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Heading size",
+          "fr": "Taille de titre",
+          "de": "Heading-Größe",
+          "es": "Tamaño del encabezado",
+          "pt-PT": "Tamanho do cabeçalho"
+        },
+        "default": 36
+      },
+      {
+        "type": "range",
+        "id": "pop-up-text-description-text-size",
+        "min": 10,
+        "max": 32,
+        "step": 2,
+        "unit": {
+          "en": "px",
+          "fr": "px",
+          "de": "px",
+          "es": "px",
+          "pt-PT": "px"
+        },
+        "label": {
+          "en": "Text size",
+          "fr": "Taille de texte",
+          "de": "Textgröße",
+          "es": "Tamaño del texto",
+          "pt-PT": "Tamanho do texto"
+        },
+        "default": 16
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Cart",
+      "fr": "Panier",
+      "de": "Einkaufswagen",
+      "es": "Carrito",
+      "pt-PT": "Carrinho"
+    },
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart-type",
+        "label": {
+          "en": "Cart type",
+          "fr": "Type de panier",
+          "de": "Einkaufswagenart",
+          "es": "Tipo de carrito",
+          "pt-PT": "Tipo de carrinho"
+        },
+        "options": [
+          {
+            "value": "drawer",
+            "label": {
+              "en": "Drawer",
+              "fr": "Tiroir",
+              "de": "Schublade",
+              "es": "Cajón",
+              "pt-PT": "Gaveta"
+            }
+          },
+          {
+            "value": "page",
+            "label": {
+              "en": "Page",
+              "fr": "Page",
+              "de": "Seite",
+              "es": "Página",
+              "pt-PT": "Página"
+            }
+          }
+        ],
+        "default": "drawer"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable-additional-checkout-buttons",
+        "label": "Enable dynamic checkout buttons",
+        "info": {
+          "en": "[Learn more](https://help.shopify.com/en/manual/sell-online/online-store/dynamic-checkout)",
+          "fr": "[En savoir plus](https://help.shopify.com/fr/manual/sell-online/online-store/dynamic-checkout)",
+          "de": "[Mehr erfahren](https://help.shopify.com/de/manual/sell-online/online-store/dynamic-checkout)",
+          "es": "[Aprenda m\u00e1s](https://help.shopify.com/es/manual/sell-online/online-store/dynamic-checkout)",
+          "pt-PT": "[Saber mais](https://help.shopify.com/en/manual/sell-online/online-store/dynamic-checkout)"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "allow_note",
+        "label": {
+          "en": "Enable cart notes",
+          "fr": "Activer les commentaires du panier",
+          "de": "Aktiviere Einkaufswagen-Notizen",
+          "es": "Activar comentarios en carrito",
+          "pt-PT": "Ativar notas de carrinho"
+        },
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": {
+            "en": "Terms and conditions",
+            "fr": "Conditions générales",
+            "de": "AGB",
+            "es": "Términos y condiciones",
+            "pt-PT": "Termos e condições"
+          }
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_terms_conditions",
+        "label": {
+          "en": "Enable terms and conditions",
+          "fr": "Activer les conditions générales",
+          "de": "Aktiviere AGB",
+          "es": "Activar los términos y condiciones",
+          "pt-PT": "Ativar termos e condições"
+        },
+        "default": false
+      },
+      {
+        "type": "url",
+        "id": "terms_conditions_link",
+        "label": {
+          "en": "Link",
+          "fr": "Lien",
+          "de": "Link",
+          "es": "Enlace",
+          "pt-PT": "Ligação"
+        }
+      },
+      {
+        "type":"paragraph",
+        "content": {
+          "en": "Additional payment options, other than PayPal, won't work with the terms and conditions checkbox.",
+          "fr": "À l’exception de Paypal, aucune autre option de paiement ne sera acceptée lors de la validation des conditions générales.",
+          "de": "Zusätzliche Zahlungsoptionen außer PayPal funktionieren nicht mit dem AGB-Kontrollkästchen.",
+          "es": "Los métodos de pago distintos a PayPal no funcionarán con la casilla de verificación de términos y condiciones.",
+          "pt-PT": "Opções de pagamento adicionais, para além do PayPal, não irão funcionar com a caixa de verificação dos termos e condições."
+        }
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Social Media",
+      "fr": "Réseaux sociaux",
+      "de": "Social Media",
+      "es": "Medios sociales",
+      "pt-PT": "Redes sociais"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Accounts",
+          "fr": "Comptes",
+          "de": "Konten",
+          "es": "Cuentas",
+          "pt-PT": "Contas"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_facebook_link",
+        "label": {
+          "en": "Facebook",
+          "fr": "Facebook",
+          "de": "Facebook",
+          "es": "Facebook",
+          "pt-PT": "Facebook"
+        },
+        "info": {
+          "en": "https:\/\/www.facebook.com\/shopify",
+          "fr": "https:\/\/www.facebook.com\/shopify",
+          "de": "https:\/\/www.facebook.com\/shopify",
+          "es": "https:\/\/www.facebook.com\/shopify",
+          "pt-PT": "https:\/\/www.facebook.com\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_twitter_link",
+        "label": {
+          "en": "Twitter",
+          "fr": "Twitter",
+          "de": "Twitter",
+          "es": "Twitter",
+          "pt-PT": "Twitter"
+        },
+        "info": {
+          "en": "https:\/\/twitter.com\/shopify",
+          "fr": "https:\/\/twitter.com\/shopify",
+          "de": "https:\/\/twitter.com\/shopify",
+          "es": "https:\/\/twitter.com\/shopify",
+          "pt-PT": "https:\/\/twitter.com\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_instagram_link",
+        "label": {
+          "en": "Instagram",
+          "fr": "Instagram",
+          "de": "Instagram",
+          "es": "Instagram",
+          "pt-PT": "Instagram"
+        },
+        "info": {
+          "en": "https:\/\/instagram.com\/shopify",
+          "fr": "https:\/\/instagram.com\/shopify",
+          "de": "https:\/\/instagram.com\/shopify",
+          "es": "https:\/\/instagram.com\/shopify",
+          "pt-PT": "https:\/\/instagram.com\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_youtube_link",
+        "label": {
+          "en": "YouTube",
+          "fr": "YouTube",
+          "de": "YouTube",
+          "es": "YouTube",
+          "pt-PT": "YouTube"
+        },
+        "info": {
+          "en": "https:\/\/www.youtube.com\/user\/shopify",
+          "fr": "https:\/\/www.youtube.com\/user\/shopify",
+          "de": "https:\/\/www.youtube.com\/user\/shopify",
+          "es": "https:\/\/www.youtube.com\/user\/shopify",
+          "pt-PT": "https:\/\/www.youtube.com\/user\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_vimeo_link",
+        "label": {
+          "en": "Vimeo",
+          "fr": "Vimeo",
+          "de": "Vimeo",
+          "es": "Vimeo",
+          "pt-PT": "Vimeo"
+        },
+        "info": {
+          "en": "https:\/\/www.vimeo.com\/shopify",
+          "fr": "https:\/\/www.vimeo.com\/shopify",
+          "de": "https:\/\/www.vimeo.com\/shopify",
+          "es": "https:\/\/www.vimeo.com\/shopify",
+          "pt-PT": "https:\/\/www.vimeo.com\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_flickr_link",
+        "label": {
+          "en": "Flickr",
+          "fr": "Flickr",
+          "de": "Flickr",
+          "es": "Flickr",
+          "pt-PT": "Flickr"
+        },
+        "info": {
+          "en": "https:\/\/www.flickr.com\/photos\/shopify",
+          "fr": "https:\/\/www.flickr.com\/photos\/shopify",
+          "de": "https:\/\/www.flickr.com\/photos\/shopify",
+          "es": "https:\/\/www.flickr.com\/photos\/shopify",
+          "pt-PT": "https:\/\/www.flickr.com\/photos\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_pinterest_link",
+        "label": {
+          "en": "Pinterest",
+          "fr": "Pinterest",
+          "de": "Pinterest",
+          "es": "Pinterest",
+          "pt-PT": "Pinterest"
+        },
+        "info": {
+          "en": "https:\/\/www.pinterest.com\/shopify",
+          "fr": "https:\/\/www.pinterest.com\/shopify"  ,
+          "de": "https:\/\/www.pinterest.com\/shopify",
+          "es": "https:\/\/www.pinterest.com\/shopify",
+          "pt-PT": "https:\/\/www.pinterest.com\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_snapchat_link",
+        "label": {
+          "en": "Snapchat",
+          "fr": "Snapchat",
+          "de": "Snapchat",
+          "es": "Snapchat",
+          "pt-PT": "Snapchat"
+        },
+        "info": {
+          "en": "https:\/\/snapchat.com\/add\/shopify",
+          "fr": "https:\/\/snapchat.com\/add\/shopify",
+          "de": "https:\/\/snapchat.com\/add\/shopify",
+          "es": "https:\/\/snapchat.com\/add\/shopify",
+          "pt-PT": "https:\/\/snapchat.com\/add\/shopify"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_houzz_link",
+        "label": {
+          "en": "Houzz",
+          "fr": "Houzz",
+          "de": "Houzz",
+          "es": "Houzz",
+          "pt-PT": "Houzz"
+        },
+        "info": {
+          "en": "https:\/\/www.houzz.com\/user",
+          "fr": "https:\/\/www.houzz.com\/user",
+          "de": "https:\/\/www.houzz.com\/user",
+          "es": "https:\/\/www.houzz.com\/user",
+          "pt-PT": "https:\/\/www.houzz.com\/user"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_tumblr_link",
+        "label": {
+          "en": "Tumblr",
+          "fr": "Tumblr",
+          "de": "Tumblr",
+          "es":  "Tumblr",
+          "pt-PT": "Tumblr"
+        },
+        "info": {
+          "en": "http:\/\/shopify.tumblr.com",
+          "fr": "http:\/\/shopify.tumblr.com",
+          "de": "http:\/\/shopify.tumblr.com",
+          "es": "http:\/\/shopify.tumblr.com",
+          "pt-PT": "http:\/\/shopify.tumblr.com"
+        }
+      },
+      {
+        "type": "text",
+        "id": "sm_linkedin_link",
+        "label": {
+          "en": "LinkedIn",
+          "fr": "LinkedIn",
+          "de": "LinkedIn",
+          "es": "LinkedIn",
+          "pt-PT": "LinkedIn"
+        },
+        "info": {
+          "en": "https:\/\/linkedin.com\/company\/shopify",
+          "fr": "https:\/\/linkedin.com\/company\/shopify",
+          "de": "https:\/\/linkedin.com\/company\/shopify",
+          "es": "https:\/\/linkedin.com\/company\/shopify",
+          "pt-PT": "https:\/\/linkedin.com\/company\/shopify"
+        }
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Popup",
+      "fr": "Pop-up",
+      "de": "Popup",
+      "es": "Emergente",
+      "pt-PT": "Popup"
+    },
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "popup--enable",
+        "label":  {
+          "en": "Enable",
+          "fr": "Activer",
+          "de": "Aktivieren",
+          "es": "Activar",
+          "pt-PT": "Ativar"
+        }
+      },
+      {
+      "type": "select",
+      "id": "pop-up-time",
+      "label": {
+        "en": "Days until popup is displayed again",
+        "fr": "Jours avant que le pop-up soit de nouveau affiché",
+        "de": "Tage bis dieses Popup wieder angezeigt wird",
+        "es": "Días que faltan para que el emergente aparezca nuevamente",
+        "pt-PT": "Dias até nova exibição da mensagem popup"
+      },
+      "options": [
+          {
+            "value": "7",
+            "label": {
+              "en": "One week",
+              "fr": "Une semaine",
+              "de": "Eine Woche",
+              "es": "Una semana",
+              "pt-PT": "Uma semana"
+            }
+          },
+          {
+            "value": "14",
+            "label": {
+              "en": "Two weeks",
+              "fr": "Deux semaines",
+              "de": "Zwei Wochen",
+              "es": "Dos semanas",
+              "pt-PT": "Duas semanas"
+            }
+          },
+          {
+            "value": "21",
+            "label": {
+              "en": "Three weeks",
+              "fr": "Trois semaines",
+              "de": "Drei Wochen",
+              "es": "Tres semanas",
+              "pt-PT": "Três semanas"
+            }
+          },
+          {
+            "value": "28",
+            "label": {
+              "en": "Four weeks",
+              "fr": "Quatre semaines",
+              "de": "Vier Wochen",
+              "es": "Cuatro semanas",
+              "pt-PT": "Quatro semanas"
+            }
+          }
+        ],
+        "default": "7"
+      },
+      {
+        "type": "checkbox",
+        "id": "popup--test-mode",
+        "label": {
+          "en": "Enable test mode",
+          "fr": "Activer le mode test",
+          "de": "Aktiviere Testmodus",
+          "es": "Activar modo de prueba",
+          "pt-PT": "Ativar modo de teste"
+        },
+        "info": {
+          "en": "Test mode forces the popup to show on every page, and should only be used for editing the popup. Ensure 'Test mode' is disabled when launching your store.",
+          "fr": "Le mode test impose l’affichage du pop-up sur chaque page et ne doit être utilisé qu’en phase d’édition. Assurez-vous d’avoir désactivé le mode test avant d’ouvrir votre boutique ",
+          "de": "Testmodus zwingt das Popup auf jeder Seite angezeigt zu werden und sollte nur benutzt werden, um das Popup zu bearbeiten. Stellen Sie sicher, dass 'Testmodus' deaktiviert ist, wenn Sie Ihren Store starten",
+          "es": "El modo de prueba fuerza la aparición del emergente en todas las páginas, y solo se puede usar para editar el emergente. Asegúrese de que el «Modo de prueba» está desactivado al lanzar la tienda.",
+          "pt-PT": "O modo de teste obriga o popup a exibir em todas as páginas e só deve ser utilizado para editar o popup. Certifique-se que o 'Modo de teste' está desativado quando lançar a sua loja."
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "popup-newsletter-top",
+        "label": {
+          "en": "Image",
+          "fr": "Image",
+          "de": "Bild",
+          "es": "Imagen",
+          "pt-PT": "Imagem"
+        },
+        "info": {
+          "en": "400 x 400px recommended",
+          "fr": "400 x 400 px recommandé",
+          "de": "400 x 400 px empfohlen",
+          "es": "Se recomienda 400 x 400 px",
+          "pt-PT": "400 x 400px recomendado"
+        }
+      },
+      {
+        "type": "text",
+        "id": "pop-up-text-header-text",
+        "label": {
+          "en": "Heading text",
+          "fr": "Texte de titre",
+          "de": "Heading-Text",
+          "es": "Texto del encabezado",
+          "pt-PT": "Texto do cabeçalho"
+        },
+        "default": "Popup"
+      },
+      {
+        "type": "richtext",
+        "id": "pop-up-text-description-text",
+        "label": {
+          "en": "Main text",
+          "fr": "Texte principal",
+          "de": "Haupttext",
+          "es": "Texto principal",
+          "pt-PT": "Texto principal"
+        },
+        "default": "<p>Use this popup to embed a mailing list sign up form. Offer incentives to customers to join and build your mailing list.</p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "popup--show-social-icons",
+        "label": {
+          "en": "Enable social icons",
+          "fr": "Activer les icônes de réseaux sociaux",
+          "de": "Aktiviere Buttons für Social Media",
+          "es": "Activar iconos de medios sociales",
+          "pt-PT": "Ativar ícones sociais"
+        }
+      },
+  	  {
+  	    "type": "checkbox",
+    		"id": "popup--show-newsletter",
+    		"label": {
+          "en": "Enable newsletter signup",
+          "fr": "Activer l’inscription à une newsletter",
+          "de": "Aktiviere Newsletter-Anmeldung",
+          "es": "Activar la subscripción al boletín de noticias",
+          "pt-PT": "Ativar subscrição da newsletter"
+        },
+    		"default": true
+      },
+      {
+        "type": "radio",
+        "id": "desktop-popup-style",
+        "label": {
+          "en": "Popup style",
+          "fr": "Style de pop-up",
+          "de": "Popup-Stil",
+          "es": "Formato del emergente",
+          "pt-PT": "Estilo popup"
+        },
+        "options": [
+          {
+            "value": "fullscreen",
+            "label": {
+              "en": "Fullscreen (Desktop only)",
+              "fr": "Plein écran (ordinateurs de bureau seulement)",
+              "de": "Vollbild (nur für Desktop)",
+              "es": "Pantalla completa (solo en ordenadores de sobremesa)",
+              "pt-PT": "Ecrã inteiro (apenas ambiente de trabalho)"
+            }
+          },
+          {
+            "value": "slide-up",
+            "label": {
+              "en": "Slide-up bottom",
+              "fr": "Bas glissant vers le haut",
+              "de": "Slide-Up Bottom",
+              "es": "Deslizar el pie hacia arriba",
+              "pt-PT": "Deslizar fundo para cima"
+            }
+          }
+        ],
+        "default":   "fullscreen"
+      },
+      {
+        "type": "range",
+        "id": "popup-delay",
+        "min": 1,
+        "max": 15,
+        "step": 1,
+        "unit": {
+          "en": "sec",
+          "fr": "s",
+          "de": "sec",
+          "es": "s",
+          "pt-PT": "seg"
+        },
+        "label": {
+          "en": "Delay until popup appears",
+          "fr": "Attendre jusqu’à l’apparition du pop-up",
+          "de": "Verzögerung bis Popup erscheint",
+          "es": "Demorar hasta que aparezca el emergente",
+          "pt-PT": "Adiar até a mensagem popup aparecer"
+        },
+        "default": 5
+      }
+      ]
+    },
+	 {
+	   "name": {
+       "en": "Currency",
+       "fr": "Devise",
+       "de": "Währung",
+       "es": "Divisa",
+       "pt-PT": "Moeda"
+     },
+	   "settings": [
+	     {
+	       "type": "checkbox",
+	       "id": "show_multiple_currencies",
+	       "label": {
+           "en": "Enable currency converter",
+           "fr": "Activer le convertisseur de devises",
+           "de": "Währungsumrechnung aktivieren",
+           "es": "Activar conversor de divisas",
+           "pt-PT": "Ativar conversor de moeda"
+         },
+	       "default": false,
+	       "info": {
+           "en": "Even though prices are displayed in different currencies, orders will still be processed in your store's currency.",
+           "fr": "Bien que les prix puissent être affichés dans différentes devises, les commandes seront traitées dans la devise de votre boutique.",
+           "de": "Obwohl Preise in verschiedenen Währungen angezeigt werden, werden Bestellungen dennoch in der Währung von Ihrem Geschäft durchgeführt.",
+           "es": "Aunque los precios se muestren en distintas divisas, los pedidos se procesarán en la divisa de su tienda.",
+           "pt-PT": "Apesar de os preços serem apresentados em diferentes moedas, os pedidos serão na mesma processados na moeda da sua loja."
+         }
+	     },
+	     {
+	       "type": "select",
+	       "id": "currency_format",
+	       "label": {
+           "en": "Format",
+           "fr": "Format",
+           "de": "Format",
+           "es": "Formato",
+           "pt-PT": "Formato"
+         },
+	       "options": [
+	         {
+	           "value": "money_format",
+	           "label": {
+               "en": "Without currency ($10.00)",
+               "fr": "Sans devise ($10.00)",
+               "de": "Ohne Währung (10,00 $)",
+               "es": "Sin divisa (10,00 $)",
+               "pt-PT": "Sem moeda ($10.00)"
+             }
+	         },
+	         {
+	           "value": "money_with_currency_format",
+	           "label": {
+               "en": "With currency ($10.00 CAD)",
+               "fr": "Avec devise ($10.00 CAD)",
+               "de": "Mit Währung (10,00 CAD)",
+               "es": "Con divisa (10,00 $ CAD)",
+               "pt-PT": "Com moeda ($10.00 CAD)"
+             }
+	         }
+	       ],
+	       "default": "money_format"
+	     },
+	     {
+	       "type": "text",
+	       "id": "supported_currencies",
+	       "label": {
+           "en": "Supported currencies",
+           "fr": "Devises disponibles",
+           "de": "Unterstützte Währungen",
+           "es": "Divisas admitidas",
+           "pt-PT": "Moedas suportadas"
+         },
+	       "default": "INR GBP CAD USD AUD EUR JPY",
+	       "info": {
+           "en": "Use the country's ISO [currency code](http://www.xe.com/iso4217.php). Separate your currency codes with a space.",
+           "fr": "Utilisez le [code de devise ISO du pays] (http://www.xe.com/iso4217.php). Séparez vos codes de devises par un espace.",
+           "de": "Nutzen Sie die [ISO Ihres Landes] (http://www.xe.com/iso4217.php). Trennen Sie Ihre Währungscodes mit einem Leerzeichen.",
+           "es": "Utilizar el ISO del país [código de divisa](http://www.xe.com/iso4217.php). Separe los códigos de divisas con un espacio.",
+           "pt-PT": "Utilize o ISO do país [código de moeda](http://www.xe.com/iso4217.php). Separe os seus códigos de moeda com um espaço."
+         }
+	     },
+	     {
+	       "type": "text",
+	       "id": "default_currency",
+	       "label": {
+           "en": "Default currency",
+           "fr": "Devise par défaut",
+           "de": "Default-Währung",
+           "es": "Divisa por defecto",
+           "pt-PT": "Moeda predefinida"
+         },
+	       "default": "USD"
+	     }
+	   ]
+	 },
+  {
+    "name": {
+      "en": "Favicon",
+      "fr": "Favicon",
+      "de": "Favicon",
+      "es": "Favicón",
+      "pt-PT": "Favicon"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": {
+          "en": "Favicon image",
+          "fr": "Image de favicon",
+          "de": "Favicon-Bild",
+          "es": "Imagen del favicón",
+          "pt-PT": "Imagem do favicon"
+        },
+        "info": {
+          "en": "Will be scaled down to 32 x 32px",
+          "fr": "Sera réduit en 32 x 32 px",
+          "de": "Wird herunterskaliert auf 32 x 32 px.",
+          "es": "Se reducirá a 32 x 32 px",
+          "pt-PT": "Será reduzido para 32 x 32px"
+        }
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Search",
+      "fr": "Recherche",
+      "de": "Suche",
+      "es": "Búsqueda",
+      "pt-PT": "Pesquisar"
+    },
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable-product-results",
+        "label": {
+          "en": "Enable product results",
+          "fr": "Activer les résultats de produits",
+          "de": "Aktiviere Produktergebnisse",
+          "es": "Activar resultados de producto",
+          "pt-PT": "Ativar resultados de produtos"
+        },
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "enable-article-results",
+        "label": {
+          "en": "Enable article results",
+          "fr": "Activer les résultats d’articles",
+          "de": "Aktiviere Artikelergebnisse",
+          "es": "Activar resultados de artículo",
+          "pt-PT": "Ativar resultados de artigos"
+        },
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable-page-results",
+        "label": {
+          "en": "Enable page results",
+          "fr": "Activer les résultats de pages",
+          "de": "Aktiviere Seitenergebnisse",
+          "es": "Activar resultados de página",
+          "pt-PT": "Ativar resultados de páginas"
+        },
+        "default": false
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Animations",
+      "fr": "Animations",
+      "de": "Animationen",
+      "es": "Animaciones",
+      "pt-PT": "Animações"
+    },
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "animations_enabled",
+        "label": {
+          "en": "Enable animations",
+          "fr": "Activer les animations",
+          "de": "Aktiviere Animationen",
+          "es": "Activar animaciones",
+          "pt-PT": "Ativar animações"
+        },
+        "default": true,
+        "info": {
+          "en": "Enable fade in animations for home page sections and collection pages",
+          "fr": "Activer l’effet de fondu pour les animations des rubriques de la page d’accueil et des pages de collections ",
+          "de": "Aktivieren Sie Verblassen bei Animationen für Homepage-Abschnitte und Kollektionsseiten.",
+          "es": "Activar el fundido de entrada de animaciones para la secciones de página de inicio y páginas de colecciones",
+          "pt-PT": "Ativar animações a desvanecer para secções da página principal e páginas de coleções"
+        }
+      }
+    ]
+  }
+]

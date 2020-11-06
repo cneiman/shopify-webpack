@@ -1,0 +1,185 @@
+{% if section.settings.width_classes != 'video-width--100' %}
+  <div class="homepage-sections-wrapper homepage-sections-wrapper--white">
+{% endif %}
+
+{% if section.settings.video_heading != empty %}
+<div class="container video-section--{{ section.id }}">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="title-bar custom-font video-heading">
+        <h2>{{ section.settings.video_heading }}</h2>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+<div class="video-section {{ section.settings.width_classes }}">
+  <div class="wrapper">
+      {% if section.settings.url.type == 'youtube' %}
+          <div class="embed-container">
+              <div class="youtube-video" id="youtube-video-{{ section.id }}"
+                  data-video-link="{{ section.settings.url.id }}"
+                  data-video-autoplay="{% if section.settings.autoplay %}true{% else %}false{% endif %}"
+                  data-video-loop="{% if section.settings.loop %}true{% else %}false{% endif %}"
+                  data-video-mute="{% if section.settings.mute %}true{% else %}false{% endif %}">
+              </div>
+          </div>
+      {% endif %}
+
+      {% if section.settings.url.type == 'vimeo' %}
+          <div class="embed-container">
+              <div class="vimeo-video" id="vimeo-video-{{ section.id }}"
+                  data-vimeo-id="{{ section.settings.url.id }}"
+                  data-vimeo-autoplay="false"
+                  data-video-autoplay="{% if section.settings.autoplay %}true{% else %}false{% endif %}"
+                  data-vimeo-loop="{% if section.settings.loop %}true{% else %}false{% endif %}"
+                  data-vimeo-width="746"
+                  data-video-mute="{% if section.settings.mute %}true{% else %}false{% endif %}">
+              </div>
+          </div>
+      {% endif %}
+  </div>
+</div>
+
+{% if section.settings.width_classes != 'video-width--100' %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+    "name": {
+        "en": "Video",
+        "de": "Video",
+        "es": "V\u00eddeo",
+        "fr": "Vid\u00e9o",
+        "pt-PT": "V\u00eddeo"
+    },
+    "class": "homepage-section--video-wrapper wow fadeIn",
+    "settings": [
+        {
+            "id": "video_heading",
+            "type": "text",
+            "label": {
+                "en": "Heading",
+                "de": "\u00dcberschrift",
+                "es": "Encabezado",
+                "fr": "Rubrique",
+                "pt-PT": "T\u00edtulo"
+            }
+        },
+        {
+            "id": "url",
+            "type": "video_url",
+            "label": {
+                "en": "Video URL",
+                "de": "Video-URL",
+                "es": "URL del v\u00eddeo",
+                "fr": "URL de la vid\u00e9o",
+                "pt-PT": "URL do V\u00eddeo"
+            },
+            "accept": ["youtube", "vimeo"],
+            "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        },
+        {
+            "type": "checkbox",
+            "id": "autoplay",
+            "label": {
+                "en": "Autoplay",
+                "de": "Automatische Wiedergabe",
+                "es": "Reproducci\u00f3n autom\u00e1tica",
+                "fr": "Lecture automatique",
+                "pt-PT": "Reprodu\u00e7\u00e3o Autom\u00e1tica"
+            },
+            "default": false
+        },
+        {
+            "type": "checkbox",
+            "id": "loop",
+            "label": {
+                "en": "Loop",
+                "de": "Schleife",
+                "es": "En bucle",
+                "fr": "Boucle",
+                "pt-PT": "Repeti\u00e7\u00e3o"
+            },
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "mute",
+            "label": {
+                "en": "Mute",
+                "de": "Stummschalten",
+                "es": "Silenciar",
+                "fr": "Muet",
+                "pt-PT": "Silenciar"
+            },
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "width_classes",
+            "label": {
+                "en": "Width",
+                "de": "Breite",
+                "es": "Ancho",
+                "fr": "Largeur",
+                "pt-PT": "Largura"
+            },
+            "default": "video-width--100",
+            "options": [
+                {
+                    "value": "video-width--100",
+                    "label": {
+                        "en": "100%",
+                        "de": "100 %",
+                        "es": "100%",
+                        "fr": "100 %",
+                        "pt-PT": "100 %"
+                    }
+                },
+                {
+                    "value": "video-width--75",
+                    "label": {
+                        "en": "75%",
+                        "de": "75 %",
+                        "es": "75%",
+                        "fr": "75 %",
+                        "pt-PT": "75 %"
+                    }
+                },
+                {
+                    "value": "video-width--50",
+                    "label": {
+                        "en": "50%",
+                        "de": "50 %",
+                        "es": "50%",
+                        "fr": "50 %",
+                        "pt-PT": "50 %"
+                    }
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": {
+                "en": "Video",
+                "de": "Video",
+                "es": "V\u00eddeo",
+                "fr": "Vid\u00e9o",
+                "pt-PT": "V\u00eddeo"
+            },
+            "category": {
+                "en": "Video",
+                "de": "Video",
+                "es": "V\u00eddeo",
+                "fr": "Vid\u00e9o",
+                "pt-PT": "V\u00eddeo"
+            }
+        }
+    ]
+}
+{% endschema %}
